@@ -1,7 +1,7 @@
 # Rails Girls Dallas
 ## Rails Class Outline
 ##### Scott Johnson @t_itchy
-#### Each section should take ~ 10 Minutes => 70 minutes total
+#### Each section should take ~ 8 Minutes => 60 minutes total
 ___
 1. Ruby on Rails
   * Convention over configuration
@@ -32,7 +32,7 @@ ___
       * see success on all system fronts 
 4. Scaffolds & Migrations
   * `$ rails g scaffold question fields:types`
-  * `$ rails g scaffold choices fields:type`
+  * `$ rails g scaffold choices fields:types`
   * Look at migration files
   * `$ rake db:migrate`
   * In web browser goto **http://localhost:3000/questions**
@@ -41,18 +41,22 @@ ___
   * Open */config/routes.rb*
   * uncomment last line
   * Open */app/models/question.rb*  
-    `class Question < ActiveRecord::Base  
-       has_many choices  
-    end`  
+  ```ruby
+    class Question < ActiveRecord::Base   
+      has_many choices  
+    end
+  ```    
   * Open */app/models/choice.rb*       
-    `class Choice < ActiveRecord::Base  
+  ```ruby
+    class Choice < ActiveRecord::Base   
       belongs_to question  
-    end`
+    end
+  ```  
   * create choices for questions
 6. Respondent Interface
   * CRUD
       * Store response
-      * Increment Response Count     
+      * Increment Response Count
       * Show results page
 7. Finishing touches
   * Add style sheets
