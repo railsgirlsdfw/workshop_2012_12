@@ -37,18 +37,25 @@ ___
   * `$ rake db:migrate`
   * In web browser goto **http://localhost:3000/questions**
       * make some questions
-5. Relationships
-  * Open */config/routes.rb*
-  * uncomment last line
-  * */app/models/question.rb*
+5. Relationships    
 
+`/config/routes.rb`
+
+```ruby
+  # This is a legacy wild controller route that's not recommended for RESTful applications.
+  # Note: This route will make all actions in every controller accessible via GET requests.
+  match ':controller(/:action(/:id))(.:format)'
+```
+
+`/app/models/question.rb`
 
 ```ruby
   class Question < ActiveRecord::Base  
     has_many choices
   end
 ```
-  * */app/models/choice.rb*
+
+`/app/models/choice.rb`
 
 ```ruby
   class Choice < ActiveRecord::Base   
