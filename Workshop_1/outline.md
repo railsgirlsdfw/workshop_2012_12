@@ -40,18 +40,14 @@ ___
 5. Relationships
   * Open */config/routes.rb*
   * uncomment last line
-  * Open */app/models/question.rb*  
-```ruby
-class Question < ActiveRecord::Base   
-  has_many choices  
-end
-```    
+  * Open */app/models/question.rb*    
+  `class Question < ActiveRecord::Base`   
+  &nbsp;&nbsp;&nbsp;&nbsp;`has_many choices`  
+  `end`
   * Open */app/models/choice.rb*       
-```ruby
-class Choice < ActiveRecord::Base   
-  belongs_to question  
-end
-```  
+  `class Choice < ActiveRecord::Base`   
+  &nbsp;&nbsp;&nbsp;&nbsp;`belongs_to question`    
+  `end`    
   * create choices for questions
 6. Respondent Interface
   * CRUD
@@ -60,4 +56,4 @@ end
       * Show results page
 7. Finishing touches
   * Add style sheets
-  * Post to Twitter/Facebook       
+  * Post to Twitter/Facebook
