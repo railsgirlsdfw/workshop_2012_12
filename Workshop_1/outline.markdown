@@ -41,17 +41,17 @@ ___
   * Open */config/routes.rb*
   * uncomment last line
   * Open */app/models/question.rb*  
-  ```ruby
-    class Question < ActiveRecord::Base   
-      has_many choices  
-    end
-  ```    
+```ruby
+class Question < ActiveRecord::Base   
+  has_many choices  
+end
+```    
   * Open */app/models/choice.rb*       
-  ```ruby
-    class Choice < ActiveRecord::Base   
-      belongs_to question  
-    end
-  ```  
+```ruby
+class Choice < ActiveRecord::Base   
+  belongs_to question  
+end
+```  
   * create choices for questions
 6. Respondent Interface
   * CRUD
