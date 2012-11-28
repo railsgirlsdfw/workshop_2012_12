@@ -29,7 +29,7 @@ ___
       * In web browser goto **http://localhost:3000**
       * see success on all system fronts 
 4. Scaffolds & Migrations
-  * `$ rails g scaffold question fields:types`
+  * `$ rails generate scaffold Question text:string current:integer`
   * `$ rails g scaffold choices fields:types`
   * Look at migration files
   * `$ rake db:migrate`
