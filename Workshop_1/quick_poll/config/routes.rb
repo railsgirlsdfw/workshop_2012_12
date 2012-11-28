@@ -1,4 +1,7 @@
 QuickPoll::Application.routes.draw do
+  resources :choices
+
+
   resources :questions
 
 
