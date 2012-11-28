@@ -27,8 +27,6 @@ ___
       * views
   * `$ rails s`
       * In web browser goto **http://localhost:3000**
-      * see failure in db connectivity
-  * `$ rake db:create`
       * see success on all system fronts 
 4. Scaffolds & Migrations
   * `$ rails g scaffold question fields:types`
