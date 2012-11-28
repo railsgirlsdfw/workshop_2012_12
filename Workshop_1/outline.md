@@ -63,10 +63,12 @@ ___
   
   * create choices for questions
 6. Respondent Interface
+  * `$ rails generate controller polls`
   * CRUD
       * Store response
       * Increment Response Count
       * Show results page
+      
 7. Finishing touches
   * Add style sheets
   * Post to Twitter/Facebook
