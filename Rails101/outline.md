@@ -29,9 +29,9 @@ ___
       * In web browser goto **http://localhost:3000**
       * see success on all system fronts 
 4. Scaffolds & Migrations
-  * `$ rails g scaffold question fields:types`
-  * `$ rails g scaffold choices fields:types`
-  * Look at migration files
+  * `$ rails generate scaffold Question text:string current:integer`
+  * `$ rails generate scaffold Choice question_id:integer text:string position:integer count:integer`
+  * Look at migration files & add defaults
   * `$ rake db:migrate`
   * In web browser goto **http://localhost:3000/questions**
       * make some questions
