@@ -1,11 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Text:</b>
-  <%= @question.text %>
+  <h2><%= @question.text %></h2>
+  <%= render :partial => "table_results", :locals => {:choices => @choices} %>
 </p>
-<% @choices.each do |choice| %>
-  <p>
-    <%= "#{choice.text}: #{choice.display_count}" %>
-  </p>
-<% end %>
+
