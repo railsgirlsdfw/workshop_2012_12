@@ -24,7 +24,8 @@ class ChoicesController < ApplicationController
   # GET /choices/new
   # GET /choices/new.json
   def new
-    @choice = Choice.new
+    @question = Question.find(params[:question_id])
+    @choice = @question.choices.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,14 +43,10 @@ class ChoicesController < ApplicationController
   def create
     @choice = Choice.new(params[:choice])
 
-    respond_to do |format|
-      if @choice.save
-        format.html { redirect_to @choice, notice: 'Choice was successfully created.' }
-        format.json { render json: @choice, status: :created, location: @choice }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @choice.errors, status: :unprocessable_entity }
-      end
+    if @choice.save
+      redirect_to :controller => :questions, :action => :show, :id => @choice.question_id, notice: 'Choice was successfully created.'
+    else
+      render action: "new"
     end
   end
 
