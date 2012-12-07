@@ -1,0 +1,14 @@
+<table class="results">
+	<% choices.each do |choice| %>
+	  <tr>
+	    <td class="title"><%= choice.text	%></td>
+	    <% if choice.count %>
+		    <% choice.count.times do %>
+		    	<td class="vote"></td>
+		    <% end %>	
+		   <% else %>
+		   	<td class="no-votes"></td>
+		   <% end %> 
+	  </tr>
+	<% end %>
+</table>	

@@ -6,7 +6,7 @@ ___
 1. Ruby on Rails
   * Convention over configuration
   * Model View Controller
-  * Built for "Real World Applications"
+  * Built for "Real World" Applications
 2. Spec out an Application
   * What does it do?
       * Entity Relationship Diagrams (ERD)
@@ -36,30 +36,27 @@ ___
   * In web browser goto **http://localhost:3000/questions**
       * make some questions
 5. Relationships    
+  `/config/routes.rb`
 
-`/config/routes.rb`
+  ```ruby
+    # This is a legacy wild controller route that's not recommended for RESTful applications.
+    # Note: This route will make all actions in every controller accessible via GET requests.
+    match ':controller(/:action(/:id))(.:format)'
+  ```
+  `/app/models/question.rb`
 
-```ruby
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  match ':controller(/:action(/:id))(.:format)'
-```
+  ```ruby
+    class Question < ActiveRecord::Base  
+      has_many choices
+    end
+  ```
+  `/app/models/choice.rb`
 
-`/app/models/question.rb`
-
-```ruby
-  class Question < ActiveRecord::Base  
-    has_many choices
-  end
-```
-
-`/app/models/choice.rb`
-
-```ruby
-  class Choice < ActiveRecord::Base   
-    belongs_to question    
-  end
-```  
+  ```ruby
+    class Choice < ActiveRecord::Base   
+      belongs_to question    
+    end
+  ```  
   
   * create choices for questions
 6. Respondent Interface
